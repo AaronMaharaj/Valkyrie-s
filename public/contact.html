@@ -115,7 +115,7 @@
             <input
               type="text"
               class="form-control"
-              id="f-name"
+              id="l-name"
               placeholder="Last Name"
               required
             />
@@ -153,6 +153,7 @@
               onchange="changeMapLocation()"
               required
             >
+              <option value="">Select Branch</option>
               <option value="arima">Arima</option>
               <option value="sanfernando">San Fernando</option>
               <option value="couva">Couva</option>
@@ -181,7 +182,13 @@
             required
           ></textarea>
         </div>
-        <button type="button" class="btn btn-warning mb-3" onclick="alert('Your message has been sent, response will be received in 3-5 business days.')">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-warning mb-3"
+          onclick="alert('Your message has been sent.')"
+        >
+          Submit
+        </button>
       </form>
     </div>
     <div class="container-sm">
