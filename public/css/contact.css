@@ -1,3 +1,9 @@
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+}
+
 #mainNav {
     background-color: #1E2329;
     font-size: 1.5rem;
