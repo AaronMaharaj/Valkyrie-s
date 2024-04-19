@@ -158,16 +158,16 @@
 				<form action="#">
 					<div class="row pb-4">
 						<div class="col-lg-4">
-							<input type="text" class="form-control mb-4" id="fName" placeholder="First Name"  aria-label="First Name">
+							<input type="text" class="form-control mb-4" id="fName" placeholder="First Name"  aria-label="First Name" required>
 
-							<input type="text" class="form-control mb-4" id="lName" placeholder="Last Name" aria-label="Last Name">
+							<input type="text" class="form-control mb-4" id="lName" placeholder="Last Name" aria-label="Last Name" required>
 
-							<input type="tel" class="form-control mb-4" id="telephone" placeholder="Phone Number" aria-label="Phone Number">
+							<input type="tel" class="form-control mb-4" id="telephone" placeholder="Phone Number" aria-label="Phone Number" required>
 
-							<input type="email" class="form-control mb-4" id="email" placeholder="Email" aria-label="Email">
+							<input type="email" class="form-control mb-4" id="email" placeholder="Email" aria-label="Email" required>
 						</div>
 						<div class="col-lg-4 mb-4">
-							<fieldset class="rounded-3" id="branch">
+							<fieldset class="rounded-3" id="branch" required>
 								<legend>Choose a Branch</legend>
 								<hr>
 								<div class="form-check my-3">
@@ -193,7 +193,7 @@
 							  </fieldset>
 						</div>
 						<div class="col-lg-4 mb-4">
-							<fieldset class="rounded-3" id="people">
+							<fieldset class="rounded-3" id="people" required>
 								<legend>Number of People</legend>
 								<hr>
 								<div class="form-check my-3">
@@ -219,7 +219,7 @@
 							  </fieldset>
 						</div>
 						<div class="col-12">
-							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="submit" class="btn btn-primary" onclick="alert('Your reservation has been booked!')">Submit</button>
 						</div>
 					</div>
 				</form>
@@ -242,8 +242,8 @@
 						<h3>Quick Links</h3>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="#">Menu</a></li>
-							<li><a href="#">Contact Us</a></li>
+							<li><a href="menu.html">Menu</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col-sm-3 mx-auto">
