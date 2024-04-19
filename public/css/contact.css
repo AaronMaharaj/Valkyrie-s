@@ -1,0 +1,113 @@
+#mainNav {
+    background-color: #1E2329;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#mainNav .nav-link {
+    color:white;
+    font-weight: 600;
+}
+
+#mainNav .nav-link:hover {
+    color:#F5A302;
+}
+
+#mainNav .navbar-brand {
+    color: #F5A302;
+    font-size: 2rem;
+    font-weight:900;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+}
+
+.btn-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-color: #F5A302;
+    background-color: #F5A302;
+}
+
+.btn-brand:hover {
+    border-color: #dc970e;
+    background-color: #dc970e;
+    color: white;
+}
+
+.container{
+
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: #1e2329;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.container-sm{
+    margin-top: 20px;
+}
+
+h2{
+    text-align: center;
+    color: #F5A302;
+    margin-bottom: 20px
+}
+
+.form-control{
+    margin-bottom: 10px;
+    border: 2px solid #F5A302;
+    border-radius: 10px;
+    padding: 5px 10px; 
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+    color: #F5A302;
+}
+
+.container-sm{
+
+    border: 3px solid #1e2329;
+}
+
+/*Footer*/
+footer {
+    background-color: #1E2329;
+}
+footer ul {
+    padding: 0px;
+}
+
+footer li {
+    list-style: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+footer li > a {
+    text-decoration: none;
+    color: white;
+}
+
+footer li > a:hover {
+    color:#F5A302;
+}
+
+footer li > a {
+    margin: auto;
+}
+
+footer li > svg:hover {
+    color: #F5A302;
+}
+
+footer h3 {
+    color: #F5A302;
+    font-size: 2rem;
+    font-weight: bold;
+}

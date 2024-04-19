@@ -1,0 +1,323 @@
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+}
+
+/*NAV*/
+#mainNav {
+    background-color: #1E2329;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#mainNav .nav-link {
+    color:white;
+    font-weight: 600;
+}
+
+#mainNav .nav-link:hover {
+    color:#F5A302;
+}
+
+#mainNav .navbar-brand {
+    color: #F5A302;
+    font-size: 2rem;
+    font-weight:900;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+}
+
+.btn-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-color: #F5A302;
+    background-color: #F5A302;
+}
+
+.btn-brand:hover {
+    border-color: #dc970e;
+    background-color: #dc970e;
+    color: white;
+}
+
+#cart-btn{
+
+    background-color: #F5A302;
+    border: none;
+}
+
+/*LANDING IMAGE*/
+.masthead {
+    background-size: cover;
+    min-height: 70vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+h1 span {
+    color: #F5A302;
+}
+
+.color-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        min-height: 30vh;
+    }
+    h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
+}
+
+/*About Us*/
+#aboutUs h2 {
+    color: #F5A302;
+    font-size: 2.75rem;
+    font-weight: bold;
+}
+
+#aboutUs h4 {
+    font-weight: bold;
+}
+
+#aboutUs h3 {
+    color: #F5A302;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#aboutDesc {
+    font-size: 1.25rem;
+}
+
+#aboutUs-Stats p {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#aboutUs img {
+    border-radius: 30px;
+    border: 3px solid #F5A302;
+    height: 500px;
+}
+
+/*Reservation*/
+#reservation .container {
+    background-color: #1E2329;
+}
+
+#reservation h3 {
+    color: white;
+    font-weight: bold;
+}
+
+#reservation h2 {
+    color: #F5A302;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#branch, #people {
+    background-color: white;
+}
+
+form fieldset {
+    border: 0.15rem solid #F5A302;
+}
+
+fieldset hr {
+    border: none;
+    padding: none;
+    height: 0.15rem;
+    background-color: #F5A302;
+}
+
+.form-control {
+    border: 0.15rem solid #F5A302;
+}
+
+.form-check {
+    margin-left: 0.6rem;
+}
+
+legend {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+/*Footer*/
+footer {
+    background-color: #1E2329;
+}
+footer ul {
+    padding: 0px;
+}
+
+footer li {
+    list-style: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+footer li > a {
+    text-decoration: none;
+    color: white;
+}
+
+footer li > a:hover {
+    color:#F5A302;
+}
+
+footer li > a {
+    margin: auto;
+}
+
+footer li > svg:hover {
+    color: #F5A302;
+}
+
+footer h3 {
+    color: #F5A302;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*Menu*/
+
+#menu .col-12 {
+    background-color: #2A2E34;
+}
+
+#guacamole .col-12 {
+    background-color: #3B3F46;
+}
+
+#menu .col-12 h2 {
+    color: white;
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+#tacos, #guacamole, #salads {
+    background-color: #FED053;
+}
+
+
+.card-img-top {
+    border-radius: 3.125rem; /* 50px/16 */
+    padding: 1.25rem; /* 20px/16 */
+}
+
+.card {
+    border-radius: 3.125rem; /* 50px/16 */
+    background-color: #2A2E34;
+}
+
+.card-body{
+    padding: 1.5625rem; /* 25px/16 */
+    margin-top: -0.9375rem; /* -15px/16 */
+
+}
+
+.card-title {
+    color: #FED053;
+    flex-grow: 2;
+}
+
+.card-text {
+    color: #F5B301;
+}
+
+.card .btn-primary {
+    border-radius: 3.125rem; /* 50px/16 */
+    width: 7.5rem; /* 120px/16 */
+    background-color: #FED053;
+    color: #1E2328;
+}
+
+.card .btn-primary:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+/* Cart */
+
+#cart-items .card{
+
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cart-items .card h5{
+    font-size: 1.2rem;
+    margin: 0;
+    width: 60%;
+    height: 50%;
+}
+
+#cart-items .card-text{
+
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+#cart-items .amount{
+
+    font-size: 1.25rem;
+    color: white;
+    margin: 0 5px;
+}
+
+#cart-items .card .btn{
+
+    padding: .1rem .2rem;
+    width: 2.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+#cartBottom hr{
+    height: .2rem;
+    border: none;
+    padding: none;
+    margin-bottom: 0;
+    background-color: black;
+}
+
+#cartBottom .form-check{
+    font-size: 1.15rem;
+}
+
+#total-cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#total-cart h4{
+    margin: 0;
+}

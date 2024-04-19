@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Valkyrie's - Menu</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/app.css" />
+	</head>
+	<body>
+    <nav id="mainNav" class="navbar navbar-dark navbar-expand-md py-3">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">Valkyrie's</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav mx-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="menu.html">Menu</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+          <button type="button" class="btn btn-primary px-4 mx-3" data-bs-toggle="modal" data-bs-target="#cartModal" id="cart-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/></svg>
+          </button>
+					<a href="#" id="registerModalButton" class="btn btn-brand mx-2" data-bs-toggle="modal" data-bs-target="#authRegisterModal">Register</a>
+					<a href="#" id="loginModalButton" class="btn btn-brand mx-2" data-bs-toggle="modal" data-bs-target="#authLoginModal">Log-in</a>
+				</div>
+			</div>
+
+  
+      <!-- Modal -->
+      <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel"aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="cartModalLabel">Cart</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form action="#">
+                  <div id="cart-items" class="row">
+                    
+                  </div>
+                  <div class="row" id="cartBottom">
+
+                    <hr/>
+
+                    <div class="col-12 my-1">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                        <label class="form-check-label" for="flexRadioDefault1">Pick Up</label>
+                      </div>
+                    </div>
+                    
+                    <div class="col-12 my-1">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                        <label class="form-check-label" for="flexRadioDefault2">Delivery</label>
+                      </div>
+                    </div>
+                    
+                    <hr/>
+
+                    <div class="col-12 my-3">
+                        <input type="text" class="form-control" id="customeraddress" aria-label="customer address" placeholder="Enter Address"/>
+                    </div>
+
+                    <div class="col-12">
+                      <div id="total-cart" class="my-1">
+                        <h4>Total</h4>
+                        <h4 id="totalcost"></h4>
+                      </div>
+                    </div>
+                    
+                    <hr/>
+
+                    <div class="col-12 my-2">
+                      <button type="submit" class="btn btn-warning" onclick="alert('Your order has been placed!')"> Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+			<div class="modal fade" id="authRegisterModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="authRegisterModalLabel">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <label for="registerEmail" class="form-label">Email</label>
+                    <input type="email" id="registerEmail" name="email" required="" class="form-control mb-3" />
+                    <label for="registerPassword" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        name="password"
+                        required=""
+                        class="form-control mb-3"
+                    />
+                    <button type="submit" class="btn btn-primary my-3">Register</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <div class="modal fade" id="authLoginModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="authLoginModalLabel">Log-in</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <label for="loginEmail" class="form-label">Email</label>
+                    <input type="email" id="loginEmail" name="email" required="" class="form-control mb-3" />
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        required=""
+                        class="form-control mb-3"
+                    />
+                    <button type="submit" class="btn btn-primary my-3">Log-in</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+		</nav>
+    <section id="menu">
+      <div class="container-fluid my-4" id="tacos">
+        <div class="row">
+          <div class="col-12"><h2 class="text-center">Tacos</h2></div>
+        </div>
+          <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 py-5 px-5" id="tacosRow"> </div>
+      </div>
+      <div class="container-fluid my-4" id="guacamole">
+        <div class="row">
+          <div class="col-12"><h2 class="text-center">Guacamole</h2></div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 py-5 px-5" id="guacamoleRow"> </div>
+      </div>
+      <div class="container-fluid my-4" id="salads">
+        <div class="row">
+          <div class="col-12"><h2 class="text-center">Salads</h2></div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 py-5 px-5" id="saladsRow"> </div>
+      </div>
+    </section>
+		<footer>
+			<div class="container">
+				<div class="row align-items-start justify-content-md-center pt-3">
+					<div class="col-sm-3 mx-auto">
+						<h3>Locations</h3>
+						<ul>
+							<li>San Fernando</li>
+							<li>Chaguanas</li>
+							<li>Port-Of-Spain</li>
+							<li>Chaguaramas</li>
+							<li>Arima</li>
+						</ul>
+					</div>
+					<div class="col-sm-3 mx-auto">
+						<h3>Quick Links</h3>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">Menu</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-3 mx-auto">
+						<h3>Follow Us</h3>
+						<ul>
+							<li><a href="https://www.instagram.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+								<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+							  </svg></a></li>
+							<li><a href="https://twitter.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+								<path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+							  </svg></a></li>
+							<li><a href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+								<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+							  </svg></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+    <script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+			import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+		  
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+			  apiKey: "AIzaSyAVU1jwfRV2o-UxBK4cTPOO0TwdHP1RW_0",
+			  authDomain: "valkyrie-s.firebaseapp.com",
+			  projectId: "valkyrie-s",
+			  storageBucket: "valkyrie-s.appspot.com",
+			  messagingSenderId: "669461282118",
+			  appId: "1:669461282118:web:ab5744299616827a913947"
+			};
+		  
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+
+			// make auth reference
+			const auth = getAuth();
+
+			// State Persistence
+			setPersistence(auth, browserSessionPersistence)
+			.then(() => {
+				// Existing and future Auth states are now persisted in the current
+				// session only. Closing the window would clear any existing state even
+				// if a user forgets to sign out.
+				// ...
+				// New sign-in will be persisted with session persistence.
+				return signInWithEmailAndPassword(auth, email, password);
+			})
+			.catch((error) => {
+				// Handle Errors here.
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
+
+			// register Form
+			const registerForm = document.querySelector("#registerForm");
+			registerForm.addEventListener("submit", (e) => {
+				e.preventDefault();
+
+				// get user info
+				const email = registerForm["registerEmail"].value;
+				const password = registerForm["registerPassword"].value;
+
+				console.log(email, password);
+
+				// register user
+				createUserWithEmailAndPassword(auth, email, password)
+				.then((userCredential) => {
+					// Signed up 
+					const user = userCredential.user;
+					console.log("User signed up.");
+
+					// Get register and login buttons, set display to none
+					const registerButtonModal = document.querySelector("#registerModalButton");
+					const loginButtonModal = document.querySelector("#loginModalButton");
+					registerButtonModal.classList.add("d-none");
+					loginButtonModal.classList.add("d-none");
+
+					// Reset form
+					registerForm.reset();
+
+					// Create a new anchor element
+					const logoutButton = document.createElement('a');
+
+					// Add the necessary attributes and content to the new button
+					logoutButton.href = "#";
+					logoutButton.id = "logoutButton";
+					logoutButton.className = "btn btn-brand mx-2";
+					logoutButton.textContent = "Logout";
+
+					// Append the new button to the navbar
+					const navbar = document.getElementById('navbarNav');
+					navbar.appendChild(logoutButton);
+
+					// Logout user
+					logoutButton.addEventListener("click", (e) => {
+						e.preventDefault();
+						signOut(auth).then(() => {
+							// Sign-out successful.
+							console.log("User signed out.");
+							const registerButtonModal = document.querySelector("#registerModalButton");
+							const loginButtonModal = document.querySelector("#loginModalButton");
+							registerButtonModal.classList.remove("d-none");
+							loginButtonModal.classList.remove("d-none");
+							logoutButton.classList.add("d-none");
+						}).catch((error) => {
+							// An error happened.
+						});
+					});
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					// ..
+				});
+			});
+
+			// Login Form
+			const loginForm = document.querySelector("#loginForm");
+			loginForm.addEventListener("submit", (e) => {
+				e.preventDefault();
+
+				// get user info
+				const email = loginForm["loginEmail"].value;
+				const password = loginForm["loginPassword"].value;
+
+				console.log(email, password);
+
+				// login user
+				signInWithEmailAndPassword(auth, email, password)
+				.then((userCredential) => {
+					// Signed in
+					const user = userCredential.user;
+					console.log("User logged in.");
+
+					// Get register and login buttons, set display to none
+					const registerButtonModal = document.querySelector("#registerModalButton");
+					const loginButtonModal = document.querySelector("#loginModalButton");
+					registerButtonModal.classList.add("d-none");
+					loginButtonModal.classList.add("d-none");
+
+					// Reset form
+					loginForm.reset();
+
+					// Create a new anchor element
+					const logoutButton = document.createElement('a');
+
+					// Add the necessary attributes and content to the new button
+					logoutButton.href = "#";
+					logoutButton.id = "logoutButton";
+					logoutButton.className = "btn btn-brand mx-2";
+					logoutButton.textContent = "Logout";
+
+					// Append the new button to the navbar
+					const navbar = document.getElementById('navbarNav');
+					navbar.appendChild(logoutButton);
+
+					// Logout user
+					logoutButton.addEventListener("click", (e) => {
+						e.preventDefault();
+						signOut(auth).then(() => {
+							// Sign-out successful.
+							console.log("User signed out.");
+							const registerButtonModal = document.querySelector("#registerModalButton");
+							const loginButtonModal = document.querySelector("#loginModalButton");
+							registerButtonModal.classList.remove("d-none");
+							loginButtonModal.classList.remove("d-none");
+							logoutButton.classList.add("d-none");
+						}).catch((error) => {
+							// An error happened.
+						});
+					});
+				})
+				.catch((error) => {
+					const errorCode = error.code;
+					const errorMessage = error.message;
+					// ..
+				});
+			});
+
+		</script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"
+		></script>
+    <script src="js/app.js"></script>
+	</body>
+</html>

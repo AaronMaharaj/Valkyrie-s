@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "valkyrie-s",
+    "Valkyrie-s": "valkyrie-s"
+  },
+  "targets": {},
+  "etags": {}
+}
