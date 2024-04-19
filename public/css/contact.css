@@ -38,26 +38,25 @@
     color: white;
 }
 
-.container{
-
+/* Form and Map */
+#contactForm{
     border-radius: 10px;
-
     margin-top: 20px;
     background-color: #1e2329;
     
 }
 
-.container-sm{
+#map{
     margin-top: 20px;
 }
 
-h2{
+#contactForm h2 {
     text-align: center;
     color: #F5A302;
     margin-bottom: 20px
 }
 
-.form-control{
+#contactForm .form-control {
     margin-bottom: 10px;
     border: 2px solid #F5A302;
     border-radius: 10px;
@@ -65,13 +64,12 @@ h2{
     font-weight: bold;
 }
 
-label{
+#contactForm label {
     font-weight: bold;
     color: #F5A302;
 }
 
-.container-sm{
-
+#map {
     border: 3px solid #1e2329;
 }
 
