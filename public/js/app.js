@@ -1,19 +1,3 @@
-// Fetch food data from the API
-// async function fetchFoodData() {
-//     try {
-//         const response = await axios.get("https://the-mexican-food-db.p.rapidapi.com/", {
-//             headers: {
-//                 "X-RapidAPI-Key": "f1fd744881msh8c22094926a1e18p10f8e4jsnf92d1e81214b",
-//                 "X-RapidAPI-Host": "the-mexican-food-db.p.rapidapi.com",
-//             },
-//         });
-//         return response.data;
-//     } catch (error) {
-//         console.error("Failed to fetch food data:", error);
-//         throw error; // Propagate the error
-//     }
-// }
-
 // Function to generate prices within a given range
 const boundedPriceGen = (lo, hi) => {
 	return Math.floor(Math.random() * (hi - lo) + lo);
@@ -34,16 +18,32 @@ function generatePrices(foods) {
     });
 }
 
-// Fetch food data from json file (temporary because limited API requests on free plan)
+// Fetch food data from the API
 async function fetchFoodData() {
-	try {
-		const response = await axios.get("js/foods.json");
-		return generatePrices(response.data);
-	} catch (error) {
-		console.error("Failed to fetch food data: ", error);
-		throw error;
-	}
+    try {
+        const response = await axios.get("https://the-mexican-food-db.p.rapidapi.com/", {
+            headers: {
+                "X-RapidAPI-Key": "f1fd744881msh8c22094926a1e18p10f8e4jsnf92d1e81214b",
+                "X-RapidAPI-Host": "the-mexican-food-db.p.rapidapi.com",
+            },
+        });
+        return generatePrices(response.data);
+    } catch (error) {
+        console.error("Failed to fetch food data:", error);
+        throw error; // Propagate the error
+    }
 }
+
+// Fetch food data from json file (temporary because limited API requests on free plan)
+// async function fetchFoodData() {
+// 	try {
+// 		const response = await axios.get("js/foods.json");
+// 		return generatePrices(response.data);
+// 	} catch (error) {
+// 		console.error("Failed to fetch food data: ", error);
+// 		throw error;
+// 	}
+// }
 
 // Filter foods based on keywords
 function filterFoodsByKeywords(foods, keywords) {
