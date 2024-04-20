@@ -321,3 +321,29 @@ footer h3 {
 #total-cart h4{
     margin: 0;
 }
+
+#submission-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#submission-container img{
+
+    width: 300px;
+}
+
+#submission-container h3{
+
+    font-size: 35px;
+    color: #F5A302;
+}
+
+#submission-container p{
+
+    text-align: center;
+    color: #3B3F46;
+    font-weight: bold;
+}
