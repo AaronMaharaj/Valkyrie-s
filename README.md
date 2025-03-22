@@ -3,9 +3,6 @@
 ## Overview  
 Valkyries is a restaurant website designed to simplify the dining and food ordering experience. The platform allows customers to easily reserve tables, view menus, order for pick-up or delivery, and access important location and contact information. It eliminates the need for phone calls for reservations and provides an intuitive user interface for a seamless dining experience.
 
-## Live Demo  
-🔗 [View Deployed Application](https://valkyrie-s.web.app/)
-
 ## Technologies Used  
 - **HTML**: Used for structuring the content of web pages.  
 - **CSS**: Employed in styling and formatting the HTML elements.  
@@ -22,13 +19,15 @@ Valkyries is a restaurant website designed to simplify the dining and food order
 - **Customer Feedback**: Allows customers to leave feedback or complaints about their dining experience.
 
 ## Instructions for Use  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/AaronMaharaj/Valkyrie-s.git
-   1. Open the `index.html` file in any modern web browser to access the application.
+
+1. [Visit the live application](https://valkyrie-s.web.app/) 
+
 2. Browse the menu, view location details, and make reservations or orders.
+
 3. Create an account or log in for a personalized experience.
+
 4. For location assistance, use the interactive map feature to find the nearest restaurant.
+
 
 ## Contributors
 - **Lead**: Levi Ali  
